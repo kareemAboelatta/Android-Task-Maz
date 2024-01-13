@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.android_taskmaz.domain.models.requests.ProductRequest.PropertyOption" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/textViewHeadSelectedValuesStyle"
+            android:layout_marginTop="6dp"
+            android:text="@{item.property.name}"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/sub_category" />
+
+        <TextView
+            style="@style/textViewSelectedValuesStyle"
+            android:text="@{item.customOptionName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2"
+            tools:text="asdasdasdasdasdasda sdasdasdasd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

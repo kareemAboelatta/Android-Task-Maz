@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="guide_start">12dp</dimen>
+    <dimen name="guide_end">12dp</dimen>
+    <dimen name="default_radius">8dp</dimen>
+    <dimen name="def_divider_specs">0.8dp</dimen>
+    <dimen name="def_margin_top">8dp</dimen>
+
+</resources>

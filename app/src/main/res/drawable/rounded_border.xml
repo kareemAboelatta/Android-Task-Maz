@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow Layer -->
+
+    <!-- White Border Layer -->
+    <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- Border color -->
+            <corners android:radius="@dimen/_20sdp"/>
+        </shape>
+    </item>
+
+
+
+    <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primaryColorForSecondPage"/> <!-- Shadow color -->
+            <corners android:radius="@dimen/_20sdp"/> <!-- Adjust radius for roundness -->
+        </shape>
+    </item>
+
+    <!-- White Border Layer -->
+    <item android:left="6dp" android:top="6dp" android:right="6dp" android:bottom="6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- Border color -->
+            <corners android:radius="@dimen/_20sdp"/>
+        </shape>
+    </item>
+
+
+</layer-list>

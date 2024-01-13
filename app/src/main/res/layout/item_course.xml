@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardElevation="@dimen/_10sdp"
+    android:layout_marginHorizontal="@dimen/_20sdp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/course_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/john_snow"
+            />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gradient_bg"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnNavigateSelectProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Free e-book"
+                android:layout_margin="@dimen/_10sdp"
+                android:textAllCaps="false"
+                android:backgroundTint="#FCCC75"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cornerRadius="20dp"/>
+
+
+
+            <TextView
+                android:id="@+id/course_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step design sprint for beginner"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@+id/course_time_layout"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/course_time_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@+id/topics_layout"
+                >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/stopwatch"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/course_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5h 21m"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:textColor="#8C8C8C"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/topics_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@id/instructor_info_layout"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 lessons"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:backgroundTint="#4DC9D1"
+                    android:textAllCaps="false"
+                    app:cornerRadius="10dp"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UI/UX"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:backgroundTint="#0082CD"
+                    android:textAllCaps="false"
+                    app:cornerRadius="10dp"
+
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Free"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:backgroundTint="#8D5EF2"
+                    android:textAllCaps="false"
+                    app:cornerRadius="10dp"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/instructor_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_margin="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/instructor_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/avatar1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/instructor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Laurel Seilha"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/instructor_bio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Product Designer"
+                        android:textColor="#9D9FA0"
+                        android:textStyle="normal"
+                        android:textSize="14sp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

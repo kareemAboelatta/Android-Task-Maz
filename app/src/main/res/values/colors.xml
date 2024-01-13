@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#3F51B5</color> <!-- A fresh primary color -->
+    <color name="primaryColorForSecondPage">#EC5F5F</color> <!-- A fresh primary color -->
+    <color name="primaryLightColor">#5367D7</color>
+    <color name="primaryDarkColor">#0E1E78</color>
+    <color name="accentColor">#763DDC</color> <!-- An accent color -->
+    <color name="primaryTextColor">#212121</color>
+    <color name="secondaryTextColor">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error">#D32F2F</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="onSecondary">#212121</color>
+    <color name="onBackground">#212121</color>
+    <color name="onSurface">#212121</color>
+    <color name="onError">#FFFFFF</color>
+
+    <color name="black">#000000</color>
+    <color name="yellow">#FCD034</color>
+
+    <color name="white">#FFFFFF</color>
+</resources>

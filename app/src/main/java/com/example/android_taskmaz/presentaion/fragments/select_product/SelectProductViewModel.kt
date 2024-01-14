@@ -18,6 +18,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -103,10 +104,15 @@ class SelectProductViewModel @Inject constructor(
 
     fun setSelectedCategory(catId: Int) {
         viewModelScope.launch{
-            _requestState.value = requestState.value.copy(
-                selectedCategory = (_categoriesState.value as? UIState.Success)?.data?.find { it.id == catId }
-            )
-            _requestState.value = requestState.value.copy(selectedSubCategory = null)
+            /**
+             * .update{} better than _requestState.value = requestState.value.copy(selectedSubCategory = null) for race condition
+             * */
+            _requestState.update {
+                it.copy(
+                    selectedCategory = (_categoriesState.value as? UIState.Success)?.data?.find { it.id == catId },
+                    selectedSubCategory = null
+                )
+            }
             clearProperties()
         }
     }
@@ -115,17 +121,25 @@ class SelectProductViewModel @Inject constructor(
         clearProperties()
         getProperties(subCatId)
         viewModelScope.launch {
-            _requestState.value = requestState.value.copy(selectedSubCategory =
-            (_categoriesState.value as? UIState.Success)?.data
-                ?.find { it.id == requestState.value.selectedCategory?.id }
-                ?.options?.find { it.id == subCatId })
+            _requestState.update {
+                it.copy(
+                    selectedSubCategory = (_categoriesState.value as? UIState.Success)?.data?.find {
+                        it.id == requestState.value.selectedCategory?.id
+                    }?.options?.find { it.id == subCatId }
+                )
+            }
         }
     }
 
 
     private fun clearProperties() {
         viewModelScope.launch {
-            _requestState.value = requestState.value.copy(propertyOptions =  hashMapOf() )
+            _requestState.value = requestState.value.copy( )
+            _requestState.update {
+                it.copy(
+                    propertyOptions =  hashMapOf()
+                )
+            }
             _propertiesState.emit(UIState.Success(emptyList()))
         }
     }
